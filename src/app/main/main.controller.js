@@ -6,20 +6,12 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr,$state) {
+  function MainController($state,moduleList) {
+console.log(moduleList);
     var vm = this;
-    vm.moduleList=[
-      {
-        name:"Drag and Drop",
-        id:"12345"
-      },
-      {
-        name:"Mmcq",
-        id:"12345"
-      }
-    ]
+    vm.moduleList=moduleList.data;
     vm.goToModule=function(module){
-      $state.go("dragdrop", {id:12345} );
+      $state.go(module.route, {id:module.id});
     }
   }
 })();
