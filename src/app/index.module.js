@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('templates', ['ngAnimate', 'ngTouch', 'ngSanitize', 'ngMessages', 'ui.router', 'toastr']);
+    .module('templates', ['ngAnimate', 'ngTouch', 'ngSanitize', 'ngMessages', 'ui.router', 'toastr','oc.lazyLoad']);
   angular
     .module('templates').controller("something",function($scope,$state,$stateParams){
       $scope.init=function(){

@@ -25,6 +25,9 @@
         controller: 'DragDropCtrl',
         controllerAs: 'dragdrop',
         resolve:{
+          loadModule:function($ocLazyLoad){
+            return $ocLazyLoad.load('modules/dragdrop.module.js');
+          },
           data:getResolvePromise(appConstants.dataUrls.DRAG_DROP,true)
         }
       })
@@ -34,6 +37,9 @@
         controller: 'MmcqCtrl',
         controllerAs: 'mmcq',
         resolve:{
+          loadModule:function($ocLazyLoad){
+            return $ocLazyLoad.load('modules/mmcq.module.js');
+          },
           data:getResolvePromise(appConstants.dataUrls.MMCQ,true)
         }
       });
