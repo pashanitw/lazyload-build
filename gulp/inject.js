@@ -16,8 +16,11 @@ gulp.task('inject', ['scripts', 'styles'], function () {
   ], { read: false });
 
   var injectScripts = gulp.src([
-    path.join(conf.paths.src, '/app/**/*.module.js'),
-    path.join(conf.paths.src, '/app/**/*.js'),
+    path.join(conf.paths.src, '/app/*.module.js'),
+    path.join(conf.paths.src, '/app/common/**/*.js'),
+    path.join(conf.paths.src, '/app/constants/**/*.js'),
+    path.join(conf.paths.src, '/app/*.js'),
+    path.join(conf.paths.src, '/app/home/**/*.js'),
     path.join('!' + conf.paths.src, '/app/**/*.spec.js'),
     path.join('!' + conf.paths.src, '/app/**/*.mock.js'),
   ])
@@ -31,6 +34,6 @@ gulp.task('inject', ['scripts', 'styles'], function () {
   return gulp.src(path.join(conf.paths.src, '/*.html'))
     .pipe($.inject(injectStyles, injectOptions))
     .pipe($.inject(injectScripts, injectOptions))
-    .pipe(wiredep(_.extend({}, conf.wiredep)))
+    .pipe(wiredep(_.extend({devDependencies:true}, conf.wiredep)))
     .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve')));
 });

@@ -2,12 +2,12 @@
   'use strict';
 
   angular
-    .module('lastone')
-    .controller('MainController', MainController);
+    .module('templates')
+    .controller('HomeController', MainController);
 
   /** @ngInject */
   function MainController($state,moduleList) {
-console.log(moduleList);
+
     var vm = this;
     vm.moduleList=moduleList.data;
     vm.goToModule=function(module){

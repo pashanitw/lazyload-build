@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('mmcq')
+    .module('templates')
     .controller('MmcqCtrl', MmcqCtrl);
 
   /** @ngInject */

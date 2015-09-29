@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('lastone')
+    .module('templates')
     .config(config);
 
   /** @ngInject */

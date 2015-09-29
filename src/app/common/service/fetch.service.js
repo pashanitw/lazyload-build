@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('lastone')
+    .module('templates')
     .factory('fetchService', fetchSerivice);
 
   /** @ngInject */
@@ -15,7 +15,7 @@
       } else {
         var deferred = $q.defer();
         $http.get(url).then(function (data) {
-          debugger;
+
           deferred.resolve(data.data);
         });
         return deferred.promise;

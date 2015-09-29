@@ -17,6 +17,7 @@ exports.paths = {
   tmp: '.tmp',
   e2e: 'e2e'
 };
+exports.modules=['dragdrop','mmcq'];
 
 /**
  *  Wiredep is the lib which inject bower dependencies in your project
@@ -27,6 +28,7 @@ exports.wiredep = {
   exclude: [/jquery/],
   directory: 'bower_components'
 };
+
 
 /**
  *  Common implementation for an error handler of a Gulp plugin

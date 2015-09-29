@@ -93,5 +93,14 @@ gulp.task('other', function () {
 gulp.task('clean', function () {
   return $.del([path.join(conf.paths.dist, '/'), path.join(conf.paths.tmp, '/')]);
 });
+var gp_concat=require('gulp-concat');
+var gp_rename=require('gulp-rename');
+gulp.task('concating', function() {
+  conf.modules.forEach(function(directory){
+    return gulp.src(conf.paths.src + '/app/'+directory+'/**/*.js')
+      .pipe(gp_concat(directory+'.module.js'))
+      .pipe(gulp.dest(conf.paths.src+"/modules"));
+  })
+});
 
 gulp.task('build', ['html', 'fonts', 'other']);

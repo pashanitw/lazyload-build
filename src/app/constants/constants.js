@@ -8,7 +8,7 @@
     }
   };
   angular
-    .module('lastone')
+    .module('templates')
     .constant('appConstants', appConstants);
 
   /** @ngInject */
